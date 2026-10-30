@@ -35,7 +35,7 @@
 <header>
   <div class="wrap">
     <h1>Bharat Blocks Privacy Policy</h1>
-    <p>Sarathkumar.K &middot; Effective date: 28 October 2026</p>
+    <p>Sarathkumar.K &middot; Effective date: 30 October 2026</p>
   </div>
 </header>
 <main>
@@ -43,11 +43,11 @@
 <section>
   <h2>Summary</h2>
   <ul class="summary">
-    <li>Bharat Blocks is a block puzzle game for children and families. You do not need an account, a login, an email address or a phone number to play.</li>
+    <li>Bharat Blocks is a general puzzle game for ages 13 and over. It is not directed at children under 13. You do not need an account, a login, an email address or a phone number to play.</li>
     <li>The game does not ask for, collect or store your name, email, phone number, contacts, photos, precise location or any other personal information.</li>
     <li>Your progress, settings and chosen language are saved only on your device.</li>
-    <li>The game needs an internet connection to play. It checks the connection with a small request to a public internet address, and pauses while the device is offline.</li>
-    <li>The game shows ads through Google AdMob. Ads are configured as <strong>child-directed</strong>, <strong>non-personalised</strong> and limited to a <strong>G</strong> (general audience) rating. The game does not collect the Android Advertising ID.</li>
+    <li>The game needs an internet connection to play. About every 5 seconds while it is open, it sends a small HTTPS request to a Google connectivity-check address, and it pauses while the device is offline. This check sends no personal data.</li>
+    <li>The game shows ads through Google AdMob. As a conservative setting, ads are still configured as <strong>child-directed</strong>, <strong>non-personalised</strong> and limited to a <strong>G</strong> (general audience) rating. The game does not collect the Android Advertising ID. The Google ad SDK does process some device data to deliver ads (see section 4).</li>
     <li>There are no accounts, no chat, no in-app purchases and no analytics SDK.</li>
     <li>We do not sell, rent or share any data for advertising profiles.</li>
   </ul>
@@ -55,61 +55,89 @@
 
 <section>
   <h2>1. Who we are</h2>
-  <p>Bharat Blocks (Android package <code>com.bharat.blocks</code>) is developed and published by <strong>Sarathkumar.K</strong> ("we", "us"). If you have any question about this policy or about your child's data, contact us at <a href="mailto:sarathalapad@gmail.com">sarathalapad@gmail.com</a>.</p>
+  <p>Bharat Blocks (Android package <code>com.bharat.blocks</code>) is developed and published by <strong>Sarathkumar.K</strong> ("we", "us"). If you have any question about this policy, contact us at <a href="mailto:sarathalapad@gmail.com">sarathalapad@gmail.com</a>.</p>
 </section>
 
 <section>
   <h2>2. Information stored on your device</h2>
-  <p>So that you can continue where you left off, the game keeps the following on your device only: high score, Adventure progress (levels and regions unlocked, stars), settings (such as sound, music and vibration) and your chosen language. This data is never sent to us or to any server. Uninstalling the game, or clearing its data in Android Settings, deletes it.</p>
+  <p>So that you can continue where you left off, the game keeps the following on your device only:</p>
+  <ul>
+    <li>Scores: Classic high score, Rush 100s best score, and Daily Challenge best score and streak.</li>
+    <li>Adventure progress (levels and regions unlocked, stars) and any board still in progress.</li>
+    <li>Coins, and the block skins you own and have selected.</li>
+    <li>Settings (sound, vibration, reduced motion, graphics quality) and your chosen language.</li>
+    <li>Whether the tutorial is finished, and a count of game launches, used only to skip the app-open ad on the very first launch after install.</li>
+  </ul>
+  <p>This data is never sent to us or to any server, and it is excluded from Android device backups. Uninstalling the game, or clearing its data in Android Settings, deletes it.</p>
 </section>
 
 <section>
   <h2>3. Internet connection check</h2>
-  <p>Bharat Blocks requires an internet connection. While the game is running it makes a simple HTTP request to a public internet address to find out whether the device is online. If there is no connection, the game pauses and asks you to reconnect. This request carries no personal information and no game data. Like any internet request, the server that answers it receives the device's IP address and basic technical request information. We do not store or use the result for anything other than deciding whether the device is online.</p>
+  <p>Bharat Blocks requires an internet connection. To find out whether the device is online, the game sends an HTTPS <code>HEAD</code> request (headers only, with no message body) to <code>https://clients3.google.com/generate_204</code>. If that does not answer, it tries <code>https://connectivitycheck.gstatic.com/generate_204</code>. Both are public connectivity-check addresses run by Google.</p>
+  <ul>
+    <li><strong>When:</strong> at launch, about every 5 seconds while the game is open on screen, and straight away when you return to the game or tap Retry. The game makes no checks while it is in the background, or while Android reports no network at all.</li>
+    <li><strong>After a failed check:</strong> the game checks again after 2 seconds. While the offline screen is showing, checks slow down step by step, to one every 30 seconds at most.</li>
+    <li><strong>If there is no connection:</strong> the game pauses and asks you to reconnect, and resumes when the connection is back.</li>
+  </ul>
+  <p>This request sends no personal data: no name, no account, no Advertising ID, no other identifier from the game and no game data. Like any internet request, the Google server that answers it receives the device's IP address and basic technical request information (such as the software version in the request headers). The game uses the result only to decide whether the device is online, and does not store it.</p>
 </section>
 
 <section>
   <h2>4. Advertising (Google AdMob)</h2>
-  <p>Bharat Blocks is free and is supported by ads delivered through <strong>Google AdMob</strong> (the Google Mobile Ads SDK, by Google LLC), which takes part in Google Play's Families Self-Certified Ads SDK Program. No other ad network or mediation SDK is used.</p>
-  <h3>How ads are configured for children</h3>
+  <p>Bharat Blocks is free and is supported by ads delivered through <strong>Google AdMob</strong> (the Google Mobile Ads SDK, by Google LLC). No other ad network or mediation SDK is used. The game shows a banner at the bottom of every screen, an app-open ad at launch (except the very first launch after install), a full-screen ad after a finished run or level, and optional rewarded ads that you choose to watch for a revive or double coins.</p>
+  <h3>How ads are configured</h3>
+  <p>Bharat Blocks is for ages 13 and over. Even so, we keep a conservative ad setup for all players:</p>
   <ul>
     <li>All ad requests are marked as <strong>child-directed</strong> (COPPA "tag for child-directed treatment") and as <strong>under the age of consent</strong>, and are <strong>non-personalised</strong>.</li>
     <li>The maximum ad content rating is set to <strong>G</strong> (general audiences) on every ad request.</li>
     <li>The game removes the Android <strong>Advertising ID</strong> (<code>AD_ID</code>) permission, so the Advertising ID is not collected.</li>
   </ul>
   <h3>What the ad SDK may process</h3>
-  <p>To deliver ads, count impressions and prevent fraud, the ad SDK may automatically process technical information such as IP address (which can indicate an approximate region), device make and model, operating system version, language, screen size, network type, app version, and ad interaction events (for example that an ad was shown, closed or clicked). In child-directed mode this information is used only for contextual (non-personalised) ads, frequency capping, reporting, security and fraud prevention, not to build advertising profiles. Google's practices are described in <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">How Google uses information from sites or apps that use our services</a> and the <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a>.</p>
+  <p>To deliver ads, count impressions and prevent fraud, the ad SDK may automatically process technical information such as IP address (which can indicate an approximate region), device make and model, operating system version, language, screen size, network type, app version, SDK-generated identifiers such as the app set ID (not the Advertising ID), and ad interaction events (for example that an ad was shown, closed or clicked). With these settings this information is meant to be used only for contextual (non-personalised) ads, frequency capping, reporting, security and fraud prevention, not to build advertising profiles. Google's practices are described in <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">How Google uses information from sites or apps that use our services</a> and the <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a>.</p>
 </section>
 
 <section>
   <h2>5. What we do not do</h2>
   <ul>
-    <li>No accounts, sign-up or login screens. We do not ask children (or anyone) for personal information.</li>
+    <li>No accounts, sign-up or login screens. We do not ask anyone for personal information.</li>
     <li>No chat, no friend lists and no user-generated content.</li>
     <li>No in-app purchases and no real-money payments.</li>
     <li>No analytics or tracking SDK.</li>
     <li>No access to the camera, microphone, contacts, photos, files or precise (GPS) location.</li>
+    <li>No in-game web browser. The Privacy Policy button in Settings opens this page in your device's browser, and tapping an ad may open Google Play or the advertiser's page.</li>
     <li>No sale or rental of data, no interest-based (behavioural) advertising and no remarketing.</li>
   </ul>
 </section>
 
 <section>
-  <h2>6. Children's privacy</h2>
-  <p>Bharat Blocks is designed for children and families. We follow the Children's Online Privacy Protection Act (COPPA), the EU/UK GDPR rules for children's data, India's Digital Personal Data Protection Act 2023, and Google Play's Families policies, by not collecting personal information from children in the game and by configuring all ads as child-directed, non-personalised and rated G. If you believe a child has sent us personal information (for example by email), contact us at <a href="mailto:sarathalapad@gmail.com">sarathalapad@gmail.com</a> and we will delete it.</p>
+  <h2>6. Age of players and children's privacy</h2>
+  <p>Bharat Blocks is a general puzzle game for people aged 13 and over. Its content is family-friendly, but it is <strong>not designed for or directed at children under 13</strong>. We do not knowingly collect personal information from children under 13 (or under the minimum age of digital consent in your country).</p>
+  <p>The child-directed ad settings in section 4 are a precaution applied to every player. They do not mean the game is made for children.</p>
+  <ul>
+    <li><strong>Children's Online Privacy Protection Act (COPPA, United States):</strong> the game is not directed at children under 13, it does not ask for personal information, and every ad request carries the child-directed tag.</li>
+    <li><strong>EU and UK GDPR:</strong> the game does not ask for personal data, and every ad request is tagged as under the age of consent and non-personalised. If you email us, we use your address and message only to reply and to handle your request.</li>
+    <li><strong>India's Digital Personal Data Protection Act 2023:</strong> this Act treats anyone under 18 as a child. The game has no accounts, does not ask players of any age for personal data, and we do no behavioural tracking or targeted advertising.</li>
+  </ul>
 </section>
 
 <section>
-  <h2>7. Data retention and deletion</h2>
+  <h2>7. For parents: if a child under 13 used Bharat Blocks</h2>
+  <p>If you are a parent or guardian and believe a child under 13 has used Bharat Blocks, or has sent us personal information, please email <a href="mailto:sarathalapad@gmail.com">sarathalapad@gmail.com</a> with the subject "Child under 13 - Bharat Blocks". We will:</p>
+  <ul>
+    <li>tell you what we hold. This is normally nothing, unless the child emailed us;</li>
+    <li>delete any such email or other information within 30 days; and</li>
+    <li>explain how to remove the game and its on-device data.</li>
+  </ul>
+  <p>Uninstalling the game deletes everything it stored on the device and stops its connectivity checks and ad requests. We have no accounts and do not receive the data processed by the ad SDK, so we cannot look up a device or a child. That data is held by Google, under the Google Privacy Policy linked in section 4.</p>
+</section>
+
+<section>
+  <h2>8. Data retention and deletion</h2>
   <ul>
     <li>On-device data is kept until you uninstall the game or clear its data in Android Settings. Uninstalling removes all of it.</li>
     <li>We hold no game data or personal data on any server. For any deletion request (for example an email you sent us), email <a href="mailto:sarathalapad@gmail.com">sarathalapad@gmail.com</a> with the subject "Delete my Bharat Blocks data"; we act on it within 30 days.</li>
     <li>Data processed by Google AdMob for fraud prevention and reporting is handled under Google's own retention rules.</li>
   </ul>
-</section>
-
-<section>
-  <h2>8. Parents' rights</h2>
-  <p>Parents and guardians can ask us at any time what information is held about their child, ask us to delete it, and ask us to stop any further processing, by emailing <a href="mailto:sarathalapad@gmail.com">sarathalapad@gmail.com</a>. You can also reset the device's ad settings and uninstall the game at any time.</p>
 </section>
 
 <section>
